@@ -9,3 +9,5 @@ var scoringInformation = {
 	"highScore": 0,
 	"highScorePlayersName" : "Winner"
 }
+
+var automaticfiring = false

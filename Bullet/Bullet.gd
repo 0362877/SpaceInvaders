@@ -14,3 +14,4 @@ func _physics_process(delta):
 			collidedObject.get_collider().queue_free()
 			GlobalVariables.scoringInformation["currentScore"] +=10
 		queue_free()
+		GlobalVariables.bulletInstanceCount -= 1
