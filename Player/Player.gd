@@ -8,7 +8,13 @@ func _ready():
 	set_physics_process(true)
 
 func _process(delta):
-	if Input.is_action_just_pressed("fire"):
+	if GlobalVariables. automaticfiring:
+		if Input.is_action_just_pressed("fire"):
+			if GlobalVariables.bulletInstanceCount < 10:
+				var bulletInstance = bulletSource.instance()
+				bulletInstance.position = Vector2(position.x, position.y-20)
+				get_tree().get_root().add_child(bulletInstance)
+	elif Input.is_action_just_pressed("fire"):
 		if GlobalVariables.bulletInstanceCount < 1:
 			var bulletInstance = bulletSource.instance()
 			bulletInstance.position = Vector2(position.x, position.y-20)
