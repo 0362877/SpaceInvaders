@@ -12,7 +12,7 @@ func _physics_process(delta):
 		print(collidedObject.collider.name)
 		if "Player" in collidedObject.collider.name:
 			collidedObject.get_collider().queue_free()
-			get_tree().change_scene("res://Menu/Menu.tscn")
+			get_tree().change_scene("res://MainGame/Game Over.tscn")
 		if "Enemy" in collidedObject.collider.name:
 			pass 
 		else:
