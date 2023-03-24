@@ -22,7 +22,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Return" type="Button" parent="VBoxContainer"]
 margin_right = 1277.0
 margin_bottom = 20.0
 text = "Return To Main Menu"
@@ -41,3 +41,4 @@ __meta__ = {
 margin_right = 114.0
 margin_bottom = 14.0
 text = "Game Over"
+[connection signal="pressed" from="VBoxContainer/Return" to="VBoxContainer/Return" method="_on_Return_pressed"]
