@@ -1,5 +1,7 @@
 # Project Overview
-This game is a spin off of the game "Space Invaders". This games theme is "children drawings"
+This game is a spin off of the game "Space Invaders". This games theme is "children drawings".
+
+The player will be face with a large nose and big lips with the eyes spread far.
 
 ## New Gameplay
 
