@@ -31,7 +31,7 @@ School Holidays: 07-04-23, 24-04-23
 section Design
 Project Overview: 05-04-23, 1d
 Project Plan: 24-04-23, 14d
-Programming Logic: 24-04-23, ?d
+Programming Logic: 24-04-23, 1d
 
 section Implementation
 UI/Sprite Creation: 09-05-23, 3d
