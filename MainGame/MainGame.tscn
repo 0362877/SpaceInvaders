@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Audio/backgroundMusic.wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=4]
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://ExampleCode.gd" type="Script" id=6]
+[ext_resource path="res://Enemy/EnemyT2.gd" type="Script" id=7]
+[ext_resource path="res://Enemy/EnemiesT2.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.9622, 380.576 )
@@ -101,7 +103,7 @@ position = Vector2( 705.16, 3.84076 )
 script = ExtResource( 5 )
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 226.241, 73.6566 )
+position = Vector2( 226.241, 77.1728 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 332.707, 74.3564 )
@@ -194,8 +196,16 @@ position = Vector2( -255.601, 404.428 )
 position = Vector2( -579.789, 404.497 )
 
 [node name="Enemy32" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( -472.219, 404.428 )
+position = Vector2( -472.17, 404.428 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
+
+[node name="EnemiesT2" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Enemy33" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1036.89, -3.37465 )
+collision/safe_margin = 0.008
+script = ExtResource( 7 )
