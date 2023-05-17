@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Audio/backgroundMusic.wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=4]
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://ExampleCode.gd" type="Script" id=6]
-[ext_resource path="res://Enemy/EnemyT2.gd" type="Script" id=7]
+[ext_resource path="res://Images/tie.png" type="Texture" id=7]
 [ext_resource path="res://Enemy/EnemiesT2.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -14,6 +14,12 @@ extents = Vector2( 20.9622, 380.576 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 662.058, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 31.6934, 22.7691 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 333.37, 56.4114 )
 
 [node name="SpaceInvaders" type="Control"]
 margin_left = -0.768188
@@ -205,7 +211,25 @@ autoplay = true
 [node name="EnemiesT2" type="Node2D" parent="."]
 script = ExtResource( 8 )
 
-[node name="Enemy33" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1036.89, -3.37465 )
-collision/safe_margin = 0.008
-script = ExtResource( 7 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="EnemiesT2"]
+
+[node name="EnemyT2" type="KinematicBody2D" parent="EnemiesT2/KinematicBody2D" groups=[
+"enemyT2",
+]]
+position = Vector2( 0.911194, -1.91614 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemiesT2/KinematicBody2D/EnemyT2"]
+position = Vector2( -0.604614, 0.685242 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="EnemiesT2/KinematicBody2D/EnemyT2"]
+position = Vector2( 1, -0.387267 )
+scale = Vector2( 0.108262, 0.064444 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="EnemiesT2/KinematicBody2D/EnemyT2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemiesT2/KinematicBody2D/EnemyT2/Area2D"]
+position = Vector2( 525.668, 678.622 )
+shape = SubResource( 4 )
