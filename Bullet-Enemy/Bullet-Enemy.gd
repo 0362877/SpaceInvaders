@@ -11,8 +11,7 @@ func _physics_process(delta):
 	if (collidedObject): 
 		print(collidedObject.collider.name)
 		if "Player" in collidedObject.collider.name:
-			collidedObject.get_collider().queue_free()
-			get_tree().change_scene("res://MainGame/Game Over.tscn")
+			collidedObject.collider.reduceHealth()
 		if "Enemy" in collidedObject.collider.name:
 			pass 
 		else:
