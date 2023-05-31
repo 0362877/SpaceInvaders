@@ -7,6 +7,7 @@ var bulletSource = preload("res://Bullet/Bullet.tscn")
 func _ready():
 	set_process(true) 
 	set_physics_process(true)
+	GlobalVariables.Player = self
 
 func _process(delta):
 	if GlobalVariables.automaticfiring:
@@ -21,6 +22,8 @@ func _process(delta):
 			var bulletInstance = bulletSource.instance()
 			bulletInstance.position = Vector2(position.x, position.y-20)
 			get_tree().get_root().add_child(bulletInstance)
+	#if GlobalVariables.singlelife:
+		
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
@@ -37,4 +40,5 @@ func _physics_process(delta):
 func reduceHealth():
 	health -=1
 	if health == 0:
-		get_tree().change_scene("res://Menu/Game Over.tscn")
+		GlobalVariables.Player == null
+		get_tree().change_scene("res://MainGame/Game Over.tscn")

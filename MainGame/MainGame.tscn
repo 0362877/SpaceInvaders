@@ -199,7 +199,7 @@ position = Vector2( -579.789, 404.497 )
 position = Vector2( -472.17, 404.428 )
 
 [node name="EnemiesT2" type="Node2D" parent="."]
-position = Vector2( 646.976, 8.79044 )
+position = Vector2( 646.976, 15.8228 )
 script = ExtResource( 8 )
 
 [node name="EnemyT2" parent="EnemiesT2" instance=ExtResource( 7 )]

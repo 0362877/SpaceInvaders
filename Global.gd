@@ -10,4 +10,6 @@ var scoringInformation = {
 	"highScorePlayersName" : "Winner"
 }
 
+var Player
 var automaticfiring = false
+var singlelife = false
