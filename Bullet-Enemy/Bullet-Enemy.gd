@@ -17,5 +17,6 @@ func _physics_process(delta):
 			GlobalVariables.enemyBulletInstanceCount -= 1
 			if "Player" in collidedObject.collider.name:
 				collidedObject.collider.reduceHealth()
+				$Health/Lives.text = str(GlobalVariables.scoringInformation["currentScore"])
 			print ("Enemy Bullets: ", GlobalVariables.enemyBulletInstanceCount)
 
