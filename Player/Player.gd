@@ -22,8 +22,10 @@ func _process(delta):
 			var bulletInstance = bulletSource.instance()
 			bulletInstance.position = Vector2(position.x, position.y-20)
 			get_tree().get_root().add_child(bulletInstance)
-	#if GlobalVariables.singleLife:
-		
+	if GlobalVariables.singleLife:
+		if health == 2:
+			GlobalVariables.Player == null
+			get_tree().change_scene("res://MainGame/Game Over.tscn")
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
