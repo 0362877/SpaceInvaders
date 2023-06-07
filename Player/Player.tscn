@@ -4,16 +4,16 @@
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28.2527, 19.3905 )
+extents = Vector2( 23.7018, 30.5922 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 39.9933, 52.9882 )
+extents = Vector2( 33.4295, 50.9951 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.0895862, 0.0908432 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

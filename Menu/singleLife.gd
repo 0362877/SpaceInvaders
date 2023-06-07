@@ -7,5 +7,5 @@ func _ready():
 
 
 func _on_singleLife_pressed():
-	GlobalVariables.singlelife = pressed
+	GlobalVariables.singleLife = pressed
 	print (pressed)

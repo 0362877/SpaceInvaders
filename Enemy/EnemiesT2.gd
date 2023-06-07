@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var speed = 150
+var speed = 100
 
 
 func _ready():

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 500
+var speed = 600
 
 func _ready():
 	GlobalVariables.bulletInstanceCount += 1
@@ -11,7 +11,6 @@ func _physics_process(delta):
 	if (collidedObject):
 		print(collidedObject.collider.name)
 		if "Enemy" in collidedObject.collider.name:
-			collidedObject.collider.queue_free()
-			GlobalVariables.scoringInformation["currentScore"] +=10
+			collidedObject.collider.reduceEnemyHealth()
 		queue_free()
 		GlobalVariables.bulletInstanceCount -= 1

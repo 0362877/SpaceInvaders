@@ -12,4 +12,4 @@ var scoringInformation = {
 
 var Player
 var automaticfiring = false
-var singlelife = false
+var singleLife = false

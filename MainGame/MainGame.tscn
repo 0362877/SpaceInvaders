@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Audio/backgroundMusic.wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://ExampleCode.gd" type="Script" id=6]
 [ext_resource path="res://Enemy/EnemyT2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemy/EnemiesT2.gd" type="Script" id=8]
+[ext_resource path="res://Enemy/EnemyT2.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.4607, 402.425 )
@@ -15,11 +16,15 @@ extents = Vector2( 24.4607, 402.425 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 662.058, 10 )
 
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/the_razor_crest___top_view_by_superherotimefan_deaq55q-pre.png-b38ee05821c888e56bd04a20c84438b1.stex"
+
 [node name="SpaceInvaders" type="Control"]
-margin_left = -0.768188
-margin_top = 1.23187
-margin_right = 1279.23
-margin_bottom = 721.232
+margin_left = -2.52637
+margin_top = 2.98993
+margin_right = 1277.47
+margin_bottom = 722.99
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -74,7 +79,7 @@ position = Vector2( 12.2039, -11.3167 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 642.94, 669.056 )
+position = Vector2( 641.182, 669 )
 
 [node name="Border_Top" type="KinematicBody2D" parent="." groups=[
 "top",
@@ -99,7 +104,7 @@ position = Vector2( 0, 1 )
 shape = SubResource( 2 )
 
 [node name="Enemies" type="Node2D" parent="."]
-position = Vector2( 708.676, 16.1474 )
+position = Vector2( 717.466, 16.1474 )
 script = ExtResource( 5 )
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
@@ -203,26 +208,62 @@ position = Vector2( 646.976, 15.8228 )
 script = ExtResource( 8 )
 
 [node name="EnemyT2" parent="EnemiesT2" instance=ExtResource( 7 )]
-position = Vector2( -563.435, 15.6647 )
+position = Vector2( -563.435, 12.1485 )
+collision/safe_margin = 0.8
+script = ExtResource( 9 )
 
 [node name="EnemyT3" parent="EnemiesT2" instance=ExtResource( 7 )]
 position = Vector2( -384.11, 12.1486 )
+script = ExtResource( 9 )
 
 [node name="EnemyT4" parent="EnemiesT2" instance=ExtResource( 7 )]
 position = Vector2( -0.846802, 13.9066 )
+script = ExtResource( 9 )
 
 [node name="EnemyT5" parent="EnemiesT2" instance=ExtResource( 7 )]
 position = Vector2( -188.962, 12.1486 )
+script = ExtResource( 9 )
 
 [node name="EnemyT6" parent="EnemiesT2" instance=ExtResource( 7 )]
-position = Vector2( 176.72, 10.3905 )
+position = Vector2( 176.72, 13.9067 )
+script = ExtResource( 9 )
 
 [node name="EnemyT7" parent="EnemiesT2" instance=ExtResource( 7 )]
 position = Vector2( 363.077, 10.3905 )
+script = ExtResource( 9 )
 
 [node name="EnemyT8" parent="EnemiesT2" instance=ExtResource( 7 )]
 position = Vector2( 551.193, 12.1486 )
+script = ExtResource( 9 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.024
+anchor_top = 0.958
+anchor_right = 0.024
+anchor_bottom = 0.958
+margin_left = -19.72
+margin_top = -17.7602
+margin_right = 39.28
+margin_bottom = 26.2398
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HBoxContainer"]
+position = Vector2( 21.097, 22.8535 )
+scale = Vector2( 0.0357429, 0.0338285 )
+texture = SubResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="HBoxContainer"]
+position = Vector2( 52.7426, 21.0957 )
+scale = Vector2( 0.0357429, 0.0338285 )
+texture = SubResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="HBoxContainer"]
+position = Vector2( 84.3881, 21.0957 )
+scale = Vector2( 0.0357429, 0.0338285 )
+texture = SubResource( 3 )
