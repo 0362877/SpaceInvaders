@@ -21,5 +21,6 @@ func _ready():
 func _process(delta):
 	$HUD/CurrentScore.text = str (GlobalVariables.scoringInformation["currentScore"])
 	if get_tree().get_nodes_in_group("enemy").size() == 0:
-		GlobalVariables.Player == null
-		get_tree().change_scene("res://MainGame/WinScene.tscn")
+		if get_tree().get_nodes_in_group("enemyT2").size() == 0:
+			GlobalVariables.Player == null
+			get_tree().change_scene("res://MainGame/WinScene.tscn")
