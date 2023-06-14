@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var bullet = preload("res://Bullet-Enemy/Bullet-Enemy.tscn")
+export (int) var enemyHealth = 1
 
 func _ready():
 	$Area2D.connect("area_entered", self, "_colliding")
@@ -21,3 +22,9 @@ func _process(delta):
 		
 		bulletInstance.position = Vector2(global_position.x, global_position.y+20)
 		get_tree().get_root().add_child(bulletInstance)
+
+func reduceEnemyHealth():
+	enemyHealth -= 1
+	if enemyHealth == 0:
+		GlobalVariables.scoringInformation["currentScore"] +=20
+		queue_free()

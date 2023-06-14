@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var bullet = preload("res://Bullet-Enemy/Bullet-Enemy.tscn")
-export (int) var enemyHealth = 3
+export (int) var enemyHealth = 2
 
 func _ready():
 	$Area2D.connect("area_entered", self, "_colliding")

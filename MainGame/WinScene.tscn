@@ -39,15 +39,6 @@ margin_right = 437.0
 margin_bottom = 20.0
 text = "Return To Main Menu"
 script = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 641.0
-margin_top = 214.157
-margin_right = 667.0
-margin_bottom = 228.157
-text = "Arg"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_Quit_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Return" to="VBoxContainer2/Return" method="_on_Return_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Return" to="VBoxContainer/Quit" method="_on_Return_pressed"]

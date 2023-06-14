@@ -29,6 +29,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
+		get_tree().change_scene("res://MainGame/WinScene.tscn")
 		if position.x > 45:
 			move_and_collide(Vector2(-movement_speed*delta,0))
 	if Input.is_action_pressed("ui_right"):
